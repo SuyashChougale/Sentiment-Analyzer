@@ -33,15 +33,5 @@ for i in range (len(df['text'])):
   # print(i)
   try:
     df['text'][i] = sia.polarity_scores(df['text'][i])
-  # df['text'][i] = df['text'][i].pop('compound')
-    df['text'][i].popitem()
-    a = max(df['text'][i], key=df['text'][i].get)
-    if a=="neg":
-      a = "Negative"
-    elif a=="pos":
-      a = "Positive"
-    else :
-      a = "Neutral"
-    df['text'][i]=a
   except KeyError:
     continue
